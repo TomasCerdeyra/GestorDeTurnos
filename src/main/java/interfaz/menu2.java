@@ -95,12 +95,14 @@ public class menu2 extends javax.swing.JFrame {
         Formulario form = new Formulario();
         form.setVisible(true);
         form.setLocationRelativeTo(null);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAgregarTurnoActionPerformed
 
     private void btnVerListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerListaActionPerformed
          listaTurnos verLista = new listaTurnos();
          verLista.setVisible(true);
          verLista.setLocationRelativeTo(null);
+         this.setVisible(false);
     }//GEN-LAST:event_btnVerListaActionPerformed
 
 

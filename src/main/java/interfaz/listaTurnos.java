@@ -92,10 +92,10 @@ public class listaTurnos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuActionPerformed
-        menu volverMenu = new menu();
+        menu2 volverMenu = new menu2();
         volverMenu.setVisible(true);
         volverMenu.setLocationRelativeTo(null);
-        
+        this.setVisible(false);
     }//GEN-LAST:event_btnVolverMenuActionPerformed
 
 
