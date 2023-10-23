@@ -236,7 +236,7 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbboxElegirSexoActionPerformed
 
     private void btnVolverMenuFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuFormActionPerformed
-        menu volverMenuForm = new menu();
+        menu2 volverMenuForm = new menu2();
         volverMenuForm.setVisible(true);
         volverMenuForm.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVolverMenuFormActionPerformed

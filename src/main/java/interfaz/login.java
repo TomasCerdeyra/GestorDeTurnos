@@ -139,7 +139,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContraseniaActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        menu abrirMenu = new menu();
+        menu2 abrirMenu = new menu2();
         abrirMenu.setVisible(true);
         
     }//GEN-LAST:event_btnLoginActionPerformed
