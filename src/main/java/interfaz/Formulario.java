@@ -226,9 +226,10 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
-        listaTurnos volverLista = new listaTurnos();
-        volverLista.setVisible(true);
-        volverLista.setLocationRelativeTo(null);
+        menu2 volvermenu2 = new menu2();
+        volvermenu2.setVisible(true);
+        volvermenu2.setLocationRelativeTo(null);
+        this.setVisible(false);
     }//GEN-LAST:event_btnGuardarTurnoActionPerformed
 
     private void cmbboxElegirSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbboxElegirSexoActionPerformed
@@ -239,6 +240,7 @@ public class Formulario extends javax.swing.JFrame {
         menu2 volverMenuForm = new menu2();
         volverMenuForm.setVisible(true);
         volverMenuForm.setLocationRelativeTo(null);
+        this.setVisible(false);
     }//GEN-LAST:event_btnVolverMenuFormActionPerformed
 
 

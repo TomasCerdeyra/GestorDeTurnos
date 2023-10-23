@@ -95,7 +95,8 @@ public class listaTurnos extends javax.swing.JFrame {
         menu2 volverMenu = new menu2();
         volverMenu.setVisible(true);
         volverMenu.setLocationRelativeTo(null);
-        
+        this.setVisible(false);
+        //.................
     }//GEN-LAST:event_btnVolverMenuActionPerformed
 
 

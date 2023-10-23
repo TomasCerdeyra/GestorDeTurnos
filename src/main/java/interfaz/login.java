@@ -130,8 +130,8 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        txtUsuario.setText(" ");
-        txtContrasenia.setText(" ");
+        txtUsuario.setText("");
+        txtContrasenia.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseniaActionPerformed
@@ -141,7 +141,8 @@ public class login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         menu2 abrirMenu = new menu2();
         abrirMenu.setVisible(true);
-        
+        abrirMenu.setLocationRelativeTo(null);
+        this.setVisible(false);
     }//GEN-LAST:event_btnLoginActionPerformed
 
 
