@@ -8,12 +8,12 @@ package interfaz;
  *
  * @author Matias Lopez
  */
-public class menu extends javax.swing.JFrame {
+public class menu2 extends javax.swing.JFrame {
 
     /**
-     * Creates new form menu
+     * Creates new form menu2
      */
-    public menu() {
+    public menu2() {
         initComponents();
     }
 
@@ -33,19 +33,16 @@ public class menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setText("Menú");
+        jLabel1.setText("Menu");
 
-        btnAgregarTurno.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnAgregarTurno.setText("Añadir Turno");
+        btnAgregarTurno.setText("Añadir turno");
         btnAgregarTurno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarTurnoActionPerformed(evt);
             }
         });
 
-        btnVerLista.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnVerLista.setText("Ver Lista de Turnos");
+        btnVerLista.setText("Ver lista de turnos");
         btnVerLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerListaActionPerformed(evt);
@@ -57,26 +54,27 @@ public class menu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(btnAgregarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(btnVerLista)
-                .addGap(55, 55, 55))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(189, 189, 189))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(btnAgregarTurno)
+                        .addGap(75, 75, 75)
+                        .addComponent(btnVerLista)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregarTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVerLista, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(174, 174, 174))
+                    .addComponent(btnAgregarTurno)
+                    .addComponent(btnVerLista))
+                .addGap(103, 103, 103))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,18 +92,17 @@ public class menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTurnoActionPerformed
-        Formulario irForm = new Formulario();
-        irForm.setVisible(true);
-        irForm.setLocationRelativeTo(null);
+        Formulario form = new Formulario();
+        form.setVisible(true);
+        form.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnAgregarTurnoActionPerformed
 
     private void btnVerListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerListaActionPerformed
-        listaTurnos irLista = new listaTurnos();
-        irLista.setVisible(true);
-        irLista.setLocationRelativeTo(null);
+         listaTurnos verLista = new listaTurnos();
+         verLista.setVisible(true);
+         verLista.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVerListaActionPerformed
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarTurno;
