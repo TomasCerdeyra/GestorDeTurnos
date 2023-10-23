@@ -53,6 +53,7 @@ public class Formulario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
+        setResizable(false);
 
         jTextField1.setText("Numero de documento del paciente");
 
