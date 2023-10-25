@@ -128,7 +128,15 @@ public class GestionarPacientes extends javax.swing.JFrame {
             new String [] {
                 "Nombre", "Apellido", "DNI", "Edad", "Obra social", "Sexo", "Tel"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblListPacientes.setToolTipText("");
         jScrollPane5.setViewportView(tblListPacientes);
 

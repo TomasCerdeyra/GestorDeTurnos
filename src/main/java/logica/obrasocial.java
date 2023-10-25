@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package logica;
 
-/**
- *
- * @author Juan Cruz
- */
+package logica;
+import java.util.ArrayList;
+import java.util.List;
+import logica.paciente.Pacientes;
+
 public class obrasocial {
+    public static List<ObraSocial> listaObraSocial = new ArrayList<>();
     
+    public  class ObraSocial{
+     paciente obraSocial = new paciente();
+     
+      
+             
+             
+             
+             
+             
+    }
 }
