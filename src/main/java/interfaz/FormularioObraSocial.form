@@ -137,6 +137,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombreOS">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreOSActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnGuardarOS">
           <Properties>

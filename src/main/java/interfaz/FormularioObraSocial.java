@@ -4,6 +4,8 @@
  */
 package interfaz;
 
+import logica.obraSocial;
+
 /**
  *
  * @author Matias Lopez
@@ -74,6 +76,12 @@ public class FormularioObraSocial extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre de la Obra Social:");
 
+        txtNombreOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreOSActionPerformed(evt);
+            }
+        });
+
         btnGuardarOS.setText("Guardar");
         btnGuardarOS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,9 +144,17 @@ public class FormularioObraSocial extends javax.swing.JFrame {
         volverMenuForm.setVisible(true);
         volverMenuForm.setLocationRelativeTo(null);
         this.setVisible(false);
+        
+        obraSocial.ObraSocial nuevaObra = new obraSocial.ObraSocial(txtNombreOS.getText());
+        obraSocial.listaObraSocial.add(nuevaObra);
     }//GEN-LAST:event_btnGuardarOSActionPerformed
 
+    private void txtNombreOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreOSActionPerformed
+        
 
+    }//GEN-LAST:event_txtNombreOSActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarOS;
