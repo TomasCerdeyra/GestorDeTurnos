@@ -1,40 +1,34 @@
-
 package logica;
 
-/**
- *
- * @author Juan Cruz
- */
 import java.util.ArrayList;
 import java.util.List;
 import logica.paciente.Pacientes;
 
 public class turno {
-     public static List<Turnos> listaTurnos = new ArrayList<>();
-      
-     public class Turnos{
-        Pacientes paciente = new Pacientes();
-         private String horario;
-         private String dia;
-         private String anio;
-         private String mes;
-         private String dni;
-         
-   
 
-       
-    public Turnos (String horario, String dia, String mes, String anio, Pacientes dni){
-        
-        this.horario = horario;
-        this.dia = dia;
-        this.mes = mes;
-        this.anio = anio;
-        this.dni = paciente.getDni();
-     
-    }
-   
-  
-    public String getHorario() {
+    public static List<Turnos> listaTurnos = new ArrayList<>();
+
+    public class Turnos {
+
+        Pacientes paciente;
+        private String horario;
+        private String dia;
+        private String anio;
+
+        private String mes;
+        private String dni;
+
+        public Turnos(String horario, String dia, String mes, String anio, Pacientes paciente) {
+
+            this.horario = horario;
+            this.dia = dia;
+            this.mes = mes;
+            this.anio = anio;
+            this.dni = paciente.getDni();
+            this.paciente = paciente;
+        }
+
+        public String getHorario() {
             return horario;
         }
 
@@ -65,10 +59,12 @@ public class turno {
         public void setAnio(String anio) {
             this.anio = anio;
         }
-        public String getDni(){
+
+        public String getDni() {
             return paciente.getDni();
         }
-        public void setDni(Pacientes paciente){
+
+        public void setDni(Pacientes paciente) {
             this.dni = paciente.getDni();
         }
     }

@@ -1,12 +1,14 @@
 package logica;
+
 import java.util.ArrayList;
 import java.util.List;
 import logica.paciente.Pacientes;
 
-public class obrasocial {
+public class obraSocial {
+
     public static List<ObraSocial> listaObraSocial = new ArrayList<>();
 
-    static {
+    public obraSocial() {
         listaObraSocial.add(new ObraSocial("A"));
         listaObraSocial.add(new ObraSocial("B"));
         listaObraSocial.add(new ObraSocial("C"));
@@ -15,9 +17,8 @@ public class obrasocial {
     }
 
     public static class ObraSocial {
-        private String nombre;
-        Pacientes obraSocial = new Pacientes();
 
+        private String nombre;
 
         public ObraSocial(String nombre) {
             this.nombre = nombre;
@@ -26,7 +27,11 @@ public class obrasocial {
         public String getNombre() {
             return nombre;
         }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
     }
+
 }
-
-

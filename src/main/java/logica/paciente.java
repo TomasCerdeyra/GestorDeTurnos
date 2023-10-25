@@ -1,5 +1,6 @@
 package logica;
 
+import interfaz.Turnos;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class paciente {
         private String ObraSocial;
         private String sexo;
         private String edad;
+        private List<Turnos> turnosPaciente; 
 
         public Pacientes(String nombre, String Apellido, String telefono, String dni, String obraSocial, String edad, String sexo) {
             this.nombre = nombre;
@@ -27,10 +29,13 @@ public class paciente {
             this.edad = edad;
         }
 
-        Pacientes() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        public List<Turnos> getTurnosPaciente() {
+            return turnosPaciente;
         }
-        
+
+        public void setTurnosPaciente(Turnos turnosPaciente) {
+            this.turnosPaciente.add(turnosPaciente);
+        }
 
         public String getNombre() {
             return nombre;

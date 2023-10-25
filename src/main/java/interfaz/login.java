@@ -1,12 +1,13 @@
 package interfaz;
 
 import javax.swing.JOptionPane;
+import logica.obraSocial;
 import persistencia.user;
 
 
 public class Login extends javax.swing.JFrame {
-
     user user;
+    obraSocial controlador = new obraSocial();
 
     public Login() {
         initComponents();

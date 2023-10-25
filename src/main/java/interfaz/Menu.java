@@ -181,7 +181,10 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerListaActionPerformed
 
     private void btnVerLista1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerLista1ActionPerformed
-        // TODO add your handling code here:
+         ObrasSociales panleObraSociales = new ObrasSociales();
+         panleObraSociales.setVisible(true);
+         panleObraSociales.setLocationRelativeTo(null);
+         this.setVisible(false);
     }//GEN-LAST:event_btnVerLista1ActionPerformed
 
 
