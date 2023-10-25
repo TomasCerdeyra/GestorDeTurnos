@@ -8,12 +8,12 @@ package interfaz;
  *
  * @author Matias Lopez
  */
-public class menu2 extends javax.swing.JFrame {
+public class Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form menu2
      */
-    public menu2() {
+    public Menu() {
         initComponents();
     }
 
@@ -167,14 +167,14 @@ public class menu2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTurnoActionPerformed
-        Formulario form = new Formulario();
+        Pacientes form = new Pacientes();
         form.setVisible(true);
         form.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_btnAgregarTurnoActionPerformed
 
     private void btnVerListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerListaActionPerformed
-         listaTurnos verLista = new listaTurnos();
+         Turnos verLista = new Turnos();
          verLista.setVisible(true);
          verLista.setLocationRelativeTo(null);
          this.setVisible(false);

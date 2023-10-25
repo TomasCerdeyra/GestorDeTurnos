@@ -3,11 +3,11 @@ package interfaz;
 import javax.swing.JOptionPane;
 import logica.user;
 
-public class login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     user user;
 
-    public login() {
+    public Login() {
         initComponents();
         user = new user();
     }
@@ -176,7 +176,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        menu2 abrirMenu = new menu2();
+        Menu abrirMenu = new Menu();
         
         if (user.getName().equals( txtUsuario.getText()) && user.getPassword().equals(txtPassword.getText())) {
             abrirMenu.setVisible(true);

@@ -8,12 +8,12 @@ package interfaz;
  *
  * @author leszk
  */
-public class Formulario extends javax.swing.JFrame {
+public class FormularioPaciente extends javax.swing.JFrame {
 
     /**
      * Creates new form Formulario
      */
-    public Formulario() {
+    public FormularioPaciente() {
         initComponents();
     }
 
@@ -224,7 +224,7 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
-        menu2 volvermenu2 = new menu2();
+        Pacientes volvermenu2 = new Pacientes();
         volvermenu2.setVisible(true);
         volvermenu2.setLocationRelativeTo(null);
         this.setVisible(false);
@@ -235,7 +235,7 @@ public class Formulario extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbboxElegirSexoActionPerformed
 
     private void btnVolverMenuFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuFormActionPerformed
-        menu2 volverMenuForm = new menu2();
+        Pacientes volverMenuForm = new Pacientes();
         volverMenuForm.setVisible(true);
         volverMenuForm.setLocationRelativeTo(null);
         this.setVisible(false);

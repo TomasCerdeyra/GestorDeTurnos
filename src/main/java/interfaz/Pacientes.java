@@ -133,14 +133,17 @@ public class Pacientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTurnoActionPerformed
-        Formulario form = new Formulario();
+        FormularioPaciente form = new FormularioPaciente();
         form.setVisible(true);
         form.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_btnAgregarTurnoActionPerformed
 
     private void btnAgregarTurno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTurno2ActionPerformed
-        // TODO add your handling code here:
+        GestionarPacientes gest = new GestionarPacientes();
+        gest.setVisible(true);
+        gest.setLocationRelativeTo(null);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAgregarTurno2ActionPerformed
 
     /**
