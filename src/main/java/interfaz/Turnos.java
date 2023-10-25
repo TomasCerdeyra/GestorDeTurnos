@@ -109,7 +109,10 @@ public class Turnos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarTurnoActionPerformed
 
     private void btnAgregarTurno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTurno1ActionPerformed
-        // TODO add your handling code here:
+        FormularioTurnos form = new FormularioTurnos();
+        form.setVisible(true);
+        form.setLocationRelativeTo(null);
+        this.setVisible(false);
     }//GEN-LAST:event_btnAgregarTurno1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

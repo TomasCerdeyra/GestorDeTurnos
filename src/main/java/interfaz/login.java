@@ -1,7 +1,8 @@
 package interfaz;
 
 import javax.swing.JOptionPane;
-import logica.user;
+import persistencia.user;
+
 
 public class Login extends javax.swing.JFrame {
 

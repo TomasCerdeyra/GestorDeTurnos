@@ -1,85 +1,94 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logica;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-/**
- *
- * @author Usuario
- */
+
 public class paciente {
-    private static List<Pacientes> listaPacientes = new ArrayList<>();
-    private static class Pacientes {
+
+    public static List<Pacientes> listaPacientes = new ArrayList<>();
+    
+    public static class Pacientes {
 
         private String nombre;
         private String Apellido;
         private String telefono;
-        private int dni;
+        private String dni;
         private String ObraSocial;
-        private String fecha;
-        private String hora;        
+        private String sexo;
+        private String edad;
 
-        public Pacientes(String nombre, String Apellido,String telefono, int dni, String obraSocial, String fecha, String hora) {
+        public Pacientes(String nombre, String Apellido, String telefono, String dni, String obraSocial, String edad, String sexo) {
             this.nombre = nombre;
-            this.Apellido = Apellido;       
+            this.Apellido = Apellido;
             this.telefono = telefono;
             this.dni = dni;
             this.ObraSocial = obraSocial;
-            this.fecha = fecha;
-            this.hora = hora;
+            this.sexo = sexo;
+            this.edad = edad;
         }
+        
 
         public String getNombre() {
             return nombre;
         }
-         public String getApellido() {
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public String getApellido() {
             return Apellido;
+        }
+
+        public void setApellido(String Apellido) {
+            this.Apellido = Apellido;
         }
 
         public String getTelefono() {
             return telefono;
         }
 
-        public int getdni() {
-            return dni;
-        }
-         public String getObraSocial() {
-            return ObraSocial;
-        }
-         public String getFecha() {
-            return fecha;
-        }
-         public String getHora() {
-            return hora;
-        }
-        //+++
-        public void setNombre(String nombre) {
-            this.nombre = nombre;
-        }
-        
-        public void setApellido(String Apellido) {
-            this.Apellido = Apellido;
-        }
-       
         public void setTelefono(String telefono) {
             this.telefono = telefono;
         }
-        public void setDni (int dni){
+
+        public String getDni() {
+            return dni;
+        }
+
+        public void setDni(String dni) {
             this.dni = dni;
         }
-         public void setObraSocial (String obraSocial){
-            this.ObraSocial = obraSocial;
+
+        public String getObraSocial() {
+            return ObraSocial;
         }
-          public void setFecha (String fecha){
-            this.fecha = fecha;
-            
+
+        public void setObraSocial(String ObraSocial) {
+            this.ObraSocial = ObraSocial;
         }
-           public void setHora (String hora){
-            this.hora = hora;
+
+        public String getSexo() {
+            return sexo;
         }
+
+        public void setSexo(String sexo) {
+            this.sexo = sexo;
+        }
+
+        public String getEdad() {
+            return edad;
+        }
+
+        public void setEdad(String edad) {
+            this.edad = edad;
+        }
+
+        @Override
+        public String toString() {
+            return "Pacientes{" + "nombre=" + nombre + ", Apellido=" + Apellido + ", telefono=" + telefono + ", dni=" + dni + ", ObraSocial=" + ObraSocial + ", sexo=" + sexo + ", edad=" + edad + '}';
+        }
+
 
     }
 }

@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package interfaz;
+
+import logica.paciente;
 
 /**
  *
@@ -10,9 +9,7 @@ package interfaz;
  */
 public class FormularioPaciente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Formulario
-     */
+
     public FormularioPaciente() {
         initComponents();
     }
@@ -29,15 +26,15 @@ public class FormularioPaciente extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtDniPass = new javax.swing.JTextField();
+        txtEdadPass = new javax.swing.JTextField();
+        txtApellidopas = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtTelefonoPas = new javax.swing.JTextField();
+        txtNombrePas = new javax.swing.JTextField();
         btnGuardarTurno = new javax.swing.JButton();
-        cmbboxElegirSexo = new javax.swing.JComboBox<>();
+        cbxSexoPas = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         btnVolverMenuForm = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -46,7 +43,7 @@ public class FormularioPaciente extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbObraSocialPass = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -57,9 +54,9 @@ public class FormularioPaciente extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtEdadPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtEdadPassActionPerformed(evt);
             }
         });
 
@@ -68,9 +65,9 @@ public class FormularioPaciente extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Datos del Paciente");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtNombrePas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtNombrePasActionPerformed(evt);
             }
         });
 
@@ -84,11 +81,11 @@ public class FormularioPaciente extends javax.swing.JFrame {
             }
         });
 
-        cmbboxElegirSexo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbboxElegirSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Masculino", "Femenino" }));
-        cmbboxElegirSexo.addActionListener(new java.awt.event.ActionListener() {
+        cbxSexoPas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbxSexoPas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Masculino", "Femenino" }));
+        cbxSexoPas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbboxElegirSexoActionPerformed(evt);
+                cbxSexoPasActionPerformed(evt);
             }
         });
 
@@ -117,7 +114,7 @@ public class FormularioPaciente extends javax.swing.JFrame {
                 .addComponent(btnVolverMenuForm)
                 .addGap(159, 159, 159)
                 .addComponent(jLabel1)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +135,12 @@ public class FormularioPaciente extends javax.swing.JFrame {
 
         jLabel9.setText("Numero de telefono :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "A", "B", "C", "D" }));
+        cmbObraSocialPass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "A", "B", "C", "D" }));
+        cmbObraSocialPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbObraSocialPassActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Obra Social del paciente:");
 
@@ -165,17 +167,17 @@ public class FormularioPaciente extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cmbboxElegirSexo, javax.swing.GroupLayout.Alignment.LEADING, 0, 231, Short.MAX_VALUE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField5)))
+                            .addComponent(cbxSexoPas, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNombrePas, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDniPass, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEdadPass, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtApellidopas, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTelefonoPas)
+                            .addComponent(cmbObraSocialPass, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(btnGuardarTurno)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,33 +187,33 @@ public class FormularioPaciente extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombrePas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtApellidopas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDniPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEdadPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(cmbboxElegirSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxSexoPas, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbObraSocialPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                    .addComponent(txtTelefonoPas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(btnGuardarTurno)
                 .addGap(37, 37, 37))
         );
@@ -219,20 +221,30 @@ public class FormularioPaciente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtNombrePasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtNombrePasActionPerformed
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
         Pacientes volvermenu2 = new Pacientes();
         volvermenu2.setVisible(true);
         volvermenu2.setLocationRelativeTo(null);
         this.setVisible(false);
+
+        paciente.Pacientes nuevoPaciente = new paciente.Pacientes(txtNombrePas.getText(), txtApellidopas.getText(),
+                txtTelefonoPas.getText(), txtDniPass.getText(), cmbObraSocialPass.getSelectedItem().toString(), txtEdadPass.getText(), cbxSexoPas.getSelectedItem().toString());
+
+        paciente.listaPacientes.add(nuevoPaciente);
+
+        for (paciente.Pacientes p : paciente.listaPacientes) {
+            System.out.println(p.toString());
+        }
+
     }//GEN-LAST:event_btnGuardarTurnoActionPerformed
 
-    private void cmbboxElegirSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbboxElegirSexoActionPerformed
+    private void cbxSexoPasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSexoPasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbboxElegirSexoActionPerformed
+    }//GEN-LAST:event_cbxSexoPasActionPerformed
 
     private void btnVolverMenuFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuFormActionPerformed
         Pacientes volverMenuForm = new Pacientes();
@@ -241,18 +253,21 @@ public class FormularioPaciente extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnVolverMenuFormActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtEdadPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdadPassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtEdadPassActionPerformed
 
+    private void cmbObraSocialPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbObraSocialPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbObraSocialPassActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarTurno;
     private javax.swing.JButton btnVolverMenuForm;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> cmbboxElegirSexo;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbxSexoPas;
+    private javax.swing.JComboBox<String> cmbObraSocialPass;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -265,10 +280,10 @@ public class FormularioPaciente extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtApellidopas;
+    private javax.swing.JTextField txtDniPass;
+    private javax.swing.JTextField txtEdadPass;
+    private javax.swing.JTextField txtNombrePas;
+    private javax.swing.JTextField txtTelefonoPas;
     // End of variables declaration//GEN-END:variables
 }

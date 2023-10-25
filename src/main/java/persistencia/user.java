@@ -1,8 +1,8 @@
-package logica;
+package persistencia;
 
 public class user {
     String name = "user";
-    String password = "405314";
+    String password = "123";
     public user() {
         this.name = name;
         this.password = password;
