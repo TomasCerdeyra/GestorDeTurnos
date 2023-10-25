@@ -189,7 +189,7 @@ public class ObrasSociales extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnEliminarOSActionPerformed
 
-    
+    //.....
     
  
 
