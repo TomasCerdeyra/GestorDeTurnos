@@ -191,7 +191,7 @@ public class Login extends javax.swing.JFrame {
             );
         }
     }//GEN-LAST:event_btnLoginActionPerformed
-
+//.-.-..--.-.-.-.-.-..-----------------
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
