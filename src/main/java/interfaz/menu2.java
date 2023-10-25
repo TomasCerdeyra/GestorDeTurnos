@@ -42,7 +42,7 @@ public class menu2 extends javax.swing.JFrame {
         btnAgregarTurno.setBackground(new java.awt.Color(0, 153, 204));
         btnAgregarTurno.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnAgregarTurno.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregarTurno.setText("GESTIONAR PACIENTES");
+        btnAgregarTurno.setText("PACIENTES");
         btnAgregarTurno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarTurnoActionPerformed(evt);
@@ -52,7 +52,7 @@ public class menu2 extends javax.swing.JFrame {
         btnVerLista.setBackground(new java.awt.Color(0, 153, 204));
         btnVerLista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnVerLista.setForeground(new java.awt.Color(255, 255, 255));
-        btnVerLista.setText("GESTIONAR TURNOS");
+        btnVerLista.setText("TURNOS");
         btnVerLista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerListaActionPerformed(evt);

@@ -2,7 +2,7 @@ package com.mycompany.gestordeturnos;
 
 import interfaz.login;
 
-public class GestorDeTurnos {
+public class Inicio {
 
     public static void main(String[] args) {
         login inicio = new login();
