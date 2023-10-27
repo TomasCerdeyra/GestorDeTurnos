@@ -4,12 +4,14 @@
  */
 package interfaz;
 
+import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import logica.paciente;
 
 public class GestionarPacientes extends javax.swing.JFrame {
+
     DefaultTableModel model = new DefaultTableModel();
-    
+
     public GestionarPacientes() {
         initComponents();
         model.addColumn("Nombre");
@@ -19,11 +21,11 @@ public class GestionarPacientes extends javax.swing.JFrame {
         model.addColumn("Obra Social");
         model.addColumn("Sexo");
         model.addColumn("Tel");
-        
+
         RegistrarTabla();
-        
+
     }
-    
+
     private void RegistrarTabla() {
         for (paciente.Pacientes p : paciente.listaPacientes) {
             Object a[] = new Object[7];
@@ -34,11 +36,11 @@ public class GestionarPacientes extends javax.swing.JFrame {
             a[4] = p.getObraSocial();
             a[5] = p.getSexo();
             a[6] = p.getTelefono();
-            model.addRow(a);   
+            model.addRow(a);
         }
         tblListPacientes.setModel(model);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -53,7 +55,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
         jTable3 = new javax.swing.JTable();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        ModificarPaciente = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -102,10 +104,10 @@ public class GestionarPacientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Modificar Paciente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ModificarPaciente.setText("Modificar Paciente");
+        ModificarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ModificarPacienteActionPerformed(evt);
             }
         });
 
@@ -138,6 +140,11 @@ public class GestionarPacientes extends javax.swing.JFrame {
             }
         });
         tblListPacientes.setToolTipText("");
+        tblListPacientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblListPacientesMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(tblListPacientes);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -148,7 +155,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton3)
                 .addGap(154, 154, 154)
-                .addComponent(jButton1)
+                .addComponent(ModificarPaciente)
                 .addGap(151, 151, 151)
                 .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -168,7 +175,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton2)
-                            .addComponent(jButton1))))
+                            .addComponent(ModificarPaciente))))
                 .addGap(77, 77, 77)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(133, Short.MAX_VALUE))
@@ -212,13 +219,54 @@ public class GestionarPacientes extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ModificarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarPacienteActionPerformed
+
+        if (tblListPacientes.getSelectedRow() == -1) {
+            return;
+        }
+
+        FormularioModificarPaciente x = new FormularioModificarPaciente();
+
+        Vector registro;
+
+        registro = (Vector) model.getDataVector().elementAt(tblListPacientes.getSelectedRow());
+
+        x.txtNombrePas.setText(registro.elementAt(0).toString());
+        x.txtApellidopas.setText(registro.elementAt(1).toString());
+        x.txtDniPass.setText(registro.elementAt(2).toString());
+        x.txtEdadPass.setText(registro.elementAt(3).toString());
+        x.cbxSexoPas5.setSelectedItem(registro.elementAt(4)); // Corregido
+        x.cmbObraSocialPass.setSelectedItem(registro.elementAt(5)); // Corregido
+        x.txtTelefonoPas.setText(registro.elementAt(6).toString());
+
+        x.setVisible(true);
+        if (x.getRootPane() != null) {
+
+            Vector v = new Vector();
+            v.addElement(x.txtNombrePas.getText());
+            v.addElement(x.txtApellidopas.getText());
+            v.addElement(x.txtDniPass.getText());
+            v.addElement(x.txtEdadPass.getText());
+            v.addElement(x.cbxSexoPas5.getSelectedItem().toString());
+            v.addElement(x.cmbObraSocialPass.getSelectedItem().toString());
+            v.addElement(x.txtTelefonoPas.getText());
+
+            model.getDataVector().set(tblListPacientes.getSelectedRow(), v);
+            tblListPacientes.updateUI();
+        }
+
+
+    }//GEN-LAST:event_ModificarPacienteActionPerformed
+
+    private void tblListPacientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblListPacientesMouseClicked
+
+
+    }//GEN-LAST:event_tblListPacientesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton ModificarPaciente;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JEditorPane jEditorPane1;

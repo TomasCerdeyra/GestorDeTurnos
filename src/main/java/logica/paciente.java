@@ -29,6 +29,14 @@ public class paciente {
             this.edad = edad;
         }
 
+        public Pacientes(String nom, String ape, String tel, String dni, String obrasoc, int eda) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public Pacientes(String nom, String ape, String tel, String dni, String obrasoc, int eda, String sex) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
         public List<Turnos> getTurnosPaciente() {
             return turnosPaciente;
         }
