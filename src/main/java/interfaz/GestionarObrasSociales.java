@@ -34,6 +34,7 @@ public class GestionarObrasSociales extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.setForeground(new java.awt.Color(0, 153, 204));

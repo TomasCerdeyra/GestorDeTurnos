@@ -72,6 +72,7 @@ public class EliminarObraSocial extends javax.swing.JFrame {
         jLabel5.setText("Agregar Obra Social");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Nombre de la Obra Social:");
 

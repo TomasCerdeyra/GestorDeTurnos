@@ -1,5 +1,6 @@
 package interfaz;
 
+import javax.swing.JOptionPane;
 import logica.obraSocial;
 import logica.paciente;
 
@@ -40,6 +41,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel9.setText("Numero de telefono :");
 
@@ -215,13 +217,16 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbObraSocialPassActionPerformed
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
-
+        if (txtNombrePas.getText().isEmpty() || txtApellidopas.getText().isEmpty() || txtTelefonoPas.getText().isEmpty() || txtDniPass.getText().isEmpty() || txtEdadPass.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "Asegúrese de completar todos los datos del paciente.");
+        } else {
         paciente.Pacientes nuevoPaciente = new paciente.Pacientes(txtNombrePas.getText(), txtApellidopas.getText(),
                 txtTelefonoPas.getText(), txtDniPass.getText(), cmbObraSocialPass.getSelectedItem().toString(), txtEdadPass.getText(), cbxSexoPas5.getSelectedItem().toString());
 
         paciente.listaPacientes.add(nuevoPaciente);
 
-        //Despeus de agreagar el paciente muestro la pantalla
+        // Después de agregar el paciente, muestro la pantalla
         GestionarPacientes volvermenu2 = new GestionarPacientes();
         volvermenu2.setVisible(true);
         volvermenu2.setLocationRelativeTo(null);
@@ -230,6 +235,8 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
         for (paciente.Pacientes p : paciente.listaPacientes) {
             System.out.println(p.toString());
         }
+        }
+
     }//GEN-LAST:event_btnGuardarTurnoActionPerformed
 
     private void cbxSexoPas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSexoPas5ActionPerformed
@@ -251,10 +258,6 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarTurno;
     private javax.swing.JButton btnVolverMenuForm;
-    private javax.swing.JComboBox<String> cbxSexoPas;
-    private javax.swing.JComboBox<String> cbxSexoPas1;
-    private javax.swing.JComboBox<String> cbxSexoPas2;
-    private javax.swing.JComboBox<String> cbxSexoPas3;
     public javax.swing.JComboBox<String> cbxSexoPas5;
     public javax.swing.JComboBox<String> cmbObraSocialPass;
     private javax.swing.JLabel jLabel1;

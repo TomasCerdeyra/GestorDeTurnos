@@ -1,23 +1,20 @@
-
 package interfaz;
 
+import javax.swing.JOptionPane;
 import logica.obraSocial;
 import logica.paciente;
-
 
 public class FormularioPaciente extends javax.swing.JFrame {
 
     public FormularioPaciente() {
         initComponents();
-        
+
         for (obraSocial.ObraSocial obra : obraSocial.listaObraSocial) {
             cmbObraSocialPass.addItem(obra.getNombre());
-            
-            
-        }
-        
-    }
 
+        }
+
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -116,7 +113,7 @@ public class FormularioPaciente extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVolverMenuForm)
@@ -180,7 +177,7 @@ public class FormularioPaciente extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addGap(33, 33, 33)
@@ -224,10 +221,16 @@ public class FormularioPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombrePasActionPerformed
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
-        Pacientes volvermenu2 = new Pacientes();
-        volvermenu2.setVisible(true);
-        volvermenu2.setLocationRelativeTo(null);
-        this.setVisible(false);
+
+        if (txtNombrePas.getText().isEmpty() || txtApellidopas.getText().isEmpty() || txtTelefonoPas.getText().isEmpty() || txtDniPass.getText().isEmpty() || txtEdadPass.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "Asegúrese de completar todos los datos del paciente.");
+        } else {
+            Pacientes volvermenu2 = new Pacientes();
+            volvermenu2.setVisible(true);
+            volvermenu2.setLocationRelativeTo(null);
+            this.setVisible(false);
+        
 
         paciente.Pacientes nuevoPaciente = new paciente.Pacientes(txtNombrePas.getText(), txtApellidopas.getText(),
                 txtTelefonoPas.getText(), txtDniPass.getText(), cmbObraSocialPass.getSelectedItem().toString(), txtEdadPass.getText(), cbxSexoPas.getSelectedItem().toString());
@@ -237,7 +240,7 @@ public class FormularioPaciente extends javax.swing.JFrame {
         for (paciente.Pacientes p : paciente.listaPacientes) {
             System.out.println(p.toString());
         }
-
+        }
     }//GEN-LAST:event_btnGuardarTurnoActionPerformed
 
     private void cbxSexoPasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSexoPasActionPerformed

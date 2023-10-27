@@ -32,6 +32,7 @@ public class Turnos extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         btnAgregarTurno.setBackground(new java.awt.Color(0, 153, 204));
         btnAgregarTurno.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

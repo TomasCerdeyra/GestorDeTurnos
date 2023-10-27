@@ -4,6 +4,7 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
 import logica.obraSocial;
 
 /**
@@ -37,6 +38,7 @@ public class FormularioObraSocial extends javax.swing.JFrame {
         btnGuardarOS = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.setForeground(new java.awt.Color(0, 153, 204));
@@ -140,6 +142,12 @@ public class FormularioObraSocial extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverMenuFormActionPerformed
 
     private void btnGuardarOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarOSActionPerformed
+        if(txtNombreOS.getText().isEmpty()){
+                        JOptionPane.showMessageDialog(this,
+                    "Asegúrese de colocar el nombre de la Obra Social.");
+        }else{
+
+
         ObrasSociales volverMenuForm = new ObrasSociales();
         volverMenuForm.setVisible(true);
         volverMenuForm.setLocationRelativeTo(null);
@@ -148,7 +156,7 @@ public class FormularioObraSocial extends javax.swing.JFrame {
         obraSocial.ObraSocial nuevaObra = new obraSocial.ObraSocial(txtNombreOS.getText());
         obraSocial.listaObraSocial.add(nuevaObra);
     }//GEN-LAST:event_btnGuardarOSActionPerformed
-
+    }
     private void txtNombreOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreOSActionPerformed
         
 

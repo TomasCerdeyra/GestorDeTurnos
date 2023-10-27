@@ -4,12 +4,12 @@ import javax.swing.JOptionPane;
 import logica.obraSocial;
 import persistencia.user;
 
+public class login extends javax.swing.JFrame {
 
-public class Login extends javax.swing.JFrame {
     user user;
     obraSocial controlador = new obraSocial();
 
-    public Login() {
+    public login() {
         initComponents();
         user = new user();
     }
@@ -178,18 +178,29 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+
         Menu abrirMenu = new Menu();
-        
-        if (user.getName().equals( txtUsuario.getText()) && user.getPassword().equals(txtPassword.getText())) {
-            abrirMenu.setVisible(true);
-            abrirMenu.setLocationRelativeTo(null);
-            this.setVisible(false);
-        }else{
+        if (txtUsuario.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this,
-                    "Error: Usuario o Contraseña incorrectos." ,
-                    " Error ",
-                    JOptionPane.ERROR_MESSAGE  // MENSAJE DE ERROR CONTRASENIA INCORRECTA
-            );
+                    "Introduzca su Usuario.");
+        } else {
+            if (txtPassword.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this,
+                        "Introduzca su Contraseña.");
+            } else {
+
+                if (user.getName().equals(txtUsuario.getText()) && user.getPassword().equals(txtPassword.getText())) {
+                    abrirMenu.setVisible(true);
+                    abrirMenu.setLocationRelativeTo(null);
+                    this.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(this,
+                            "Error: Usuario o Contraseña incorrectos.",
+                            " Error ",
+                            JOptionPane.ERROR_MESSAGE // MENSAJE DE ERROR CONTRASENIA INCORRECTA
+                    );
+                }
+            }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 //.-.-..--.-.-.-.-.-..-----------------

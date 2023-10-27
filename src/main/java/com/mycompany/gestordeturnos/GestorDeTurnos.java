@@ -1,12 +1,12 @@
 package com.mycompany.gestordeturnos;
 
 
-import interfaz.Login;
+import interfaz.login;
 
 public class GestorDeTurnos {
 
     public static void main(String[] args) {
-        Login inicio = new Login();
+        login inicio = new login();
         inicio.setVisible(true);
         inicio.setLocationRelativeTo(null);
         
