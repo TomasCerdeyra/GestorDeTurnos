@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
 
 import java.util.Vector;
@@ -231,16 +227,46 @@ public class GestionarPacientes extends javax.swing.JFrame {
         Vector registro;
 
         registro = (Vector) model.getDataVector().elementAt(tblListPacientes.getSelectedRow());
+        //-------------------------------------Busqueda de Selector ComboBox--------------------------------------------------------
+        // Obtengo el ell sexo seleccionado en la tabla
+        String sexoSeleccionado = registro.elementAt(5).toString().trim();
 
+        // Agarro el indice que es igual al sexoSleccionado
+        int indexSexo = -1;
+        for (int i = 0; i < x.cbxSexoPas5.getItemCount(); i++) {
+            if (x.cbxSexoPas5.getItemAt(i).equals(sexoSeleccionado)) {
+                indexSexo = i;
+                break;
+            }
+        }
+
+        // Obtengo La obra Social seleccionado en la tabla
+        String obraSocialSeleccionado = registro.elementAt(4).toString().trim();
+        
+        
+        // Agarro el indice que es igual al sexoSleccionado
+        int indexObraSocial = -1;
+        for (int i = 0; i < x.cmbObraSocialPass.getItemCount(); i++) {
+            if (x.cmbObraSocialPass.getItemAt(i).trim().equals(obraSocialSeleccionado)) {
+                indexObraSocial = i;
+                break;
+            }
+        }
+        //-------------------------------------Fin Busqueda de Selector ComboBox--------------------------------------------------------
+        //Elimino el paciente viejo
+        String DNI = registro.elementAt(2).toString();
+        paciente.listaPacientes.remove(paciente.buscarPorDni(DNI));
+        
         x.txtNombrePas.setText(registro.elementAt(0).toString());
         x.txtApellidopas.setText(registro.elementAt(1).toString());
         x.txtDniPass.setText(registro.elementAt(2).toString());
         x.txtEdadPass.setText(registro.elementAt(3).toString());
-        x.cbxSexoPas5.setSelectedItem(registro.elementAt(4)); // Corregido
-        x.cmbObraSocialPass.setSelectedItem(registro.elementAt(5)); // Corregido
+        x.cbxSexoPas5.setSelectedIndex(indexSexo); // Para asegurarte de que es un String
+        x.cmbObraSocialPass.setSelectedIndex(indexObraSocial);
         x.txtTelefonoPas.setText(registro.elementAt(6).toString());
 
         x.setVisible(true);
+        this.setVisible(false);
         if (x.getRootPane() != null) {
 
             Vector v = new Vector();

@@ -7,7 +7,16 @@ import java.util.List;
 public class paciente {
 
     public static List<Pacientes> listaPacientes = new ArrayList<>();
-    
+
+    public static Pacientes buscarPorDni(String dni) {
+        for (Pacientes paciente : listaPacientes) {
+            if (paciente.getDni().equals(dni)) {
+                return paciente;
+            }
+        }
+        return null; // Retorna null si no se encuentra ningún paciente con el DNI dado
+    }
+
     public static class Pacientes {
 
         private String nombre;
@@ -17,7 +26,7 @@ public class paciente {
         private String ObraSocial;
         private String sexo;
         private String edad;
-        private List<Turnos> turnosPaciente; 
+        private List<Turnos> turnosPaciente;
 
         public Pacientes(String nombre, String Apellido, String telefono, String dni, String obraSocial, String edad, String sexo) {
             this.nombre = nombre;
@@ -27,14 +36,6 @@ public class paciente {
             this.ObraSocial = obraSocial;
             this.sexo = sexo;
             this.edad = edad;
-        }
-
-        public Pacientes(String nom, String ape, String tel, String dni, String obrasoc, int eda) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        public Pacientes(String nom, String ape, String tel, String dni, String obrasoc, int eda, String sex) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
 
         public List<Turnos> getTurnosPaciente() {
@@ -105,7 +106,6 @@ public class paciente {
         public String toString() {
             return "Pacientes{" + "nombre=" + nombre + ", Apellido=" + Apellido + ", telefono=" + telefono + ", dni=" + dni + ", ObraSocial=" + ObraSocial + ", sexo=" + sexo + ", edad=" + edad + '}';
         }
-
 
     }
 }
