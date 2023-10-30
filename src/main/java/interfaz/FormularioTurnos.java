@@ -4,6 +4,8 @@
  */
 package interfaz;
 
+import logica.paciente;
+
 /**
  *
  * @author leszk
