@@ -6,7 +6,9 @@ package interfaz;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import logica.paciente;
+import logica.turno;
 import static logica.turno.listaTurnos;
 
 /**
@@ -23,7 +25,6 @@ public class FormularioTurnos extends javax.swing.JFrame {
         jDateChooser1.setMinSelectableDate(new Date());
 
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +43,7 @@ public class FormularioTurnos extends javax.swing.JFrame {
         DniTurno = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         GuardarTurno = new javax.swing.JButton();
-        HoraTurno = new javax.swing.JComboBox<>();
+        cbxHoraTurno = new javax.swing.JComboBox<>();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel8 = new javax.swing.JLabel();
 
@@ -104,10 +105,10 @@ public class FormularioTurnos extends javax.swing.JFrame {
             }
         });
 
-        HoraTurno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "8:00", "8:40", "9:20", "10:00", "10:40", "11:20", "12:00", "12:40", "13:20", "14:00", "14:40", "15:20", "16:00", "16:40", "17:20", "18:00", "18:40", "19:20", "20:00" }));
-        HoraTurno.addActionListener(new java.awt.event.ActionListener() {
+        cbxHoraTurno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "8:00", "8:40", "9:20", "10:00", "10:40", "11:20", "12:00", "12:40", "13:20", "14:00", "14:40", "15:20", "16:00", "16:40", "17:20", "18:00", "18:40", "19:20", "20:00" }));
+        cbxHoraTurno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HoraTurnoActionPerformed(evt);
+                cbxHoraTurnoActionPerformed(evt);
             }
         });
 
@@ -132,7 +133,7 @@ public class FormularioTurnos extends javax.swing.JFrame {
                             .addComponent(jLabel8))
                         .addGap(97, 97, 97)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(HoraTurno, javax.swing.GroupLayout.Alignment.LEADING, 0, 270, Short.MAX_VALUE)
+                            .addComponent(cbxHoraTurno, javax.swing.GroupLayout.Alignment.LEADING, 0, 270, Short.MAX_VALUE)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(DniTurno, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -160,7 +161,7 @@ public class FormularioTurnos extends javax.swing.JFrame {
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(53, 53, 53)
                         .addComponent(jLabel4))
-                    .addComponent(HoraTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxHoraTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
                 .addComponent(GuardarTurno)
                 .addGap(23, 23, 23))
@@ -177,29 +178,40 @@ public class FormularioTurnos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void GuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarTurnoActionPerformed
- /*               String GuardarTurno = HoraTurno.getSelectedItem().toString();
-        
-        for (Turnos turno : listaTurnos) {
-            if (turno.gethora().equals(GuardarTurno)) {
-                listaTurnos.remove(turno);
-                break;
-            }
-        }*/
-  SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-  String theDate = dateFormat.format(jDateChooser1.getDate());
-  System.out.println(theDate);
-        
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+
+        String fecha = dateFormat.format(jDateChooser1.getDate());
+        String hora = cbxHoraTurno.getSelectedItem().toString();
+        paciente.Pacientes paciente2 = paciente.buscarPorDni(DniTurno.getText().toString());
+
+        boolean mensaje = turno.buscarPorFecha(fecha, hora);
+
+        if (mensaje == true) {
+            JOptionPane.showMessageDialog(this,
+                    "Error: Turno ocupado",
+                    " Error ",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        } else {
+            turno.Turnos nuevoTurno = new turno.Turnos(hora, fecha, paciente2);
+            turno.listaTurnos.add(nuevoTurno);
+
+            Turnos form = new Turnos();
+            form.setVisible(true);
+            form.setLocationRelativeTo(null);
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_GuardarTurnoActionPerformed
 
-    private void HoraTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraTurnoActionPerformed
-        
-    }//GEN-LAST:event_HoraTurnoActionPerformed
+    private void cbxHoraTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxHoraTurnoActionPerformed
+
+    }//GEN-LAST:event_cbxHoraTurnoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField DniTurno;
     private javax.swing.JButton GuardarTurno;
-    private javax.swing.JComboBox<String> HoraTurno;
+    private javax.swing.JComboBox<String> cbxHoraTurno;
     private javax.swing.JButton jButton1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;

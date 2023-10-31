@@ -1,22 +1,31 @@
 package logica;
-
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import logica.paciente.Pacientes;
 
 public class turno {
 
     public static List<Turnos> listaTurnos = new ArrayList<>();
+    
+     public static boolean buscarPorFecha(String fecha, String hora) {
+        for (Turnos turno : listaTurnos) {
+            if (turno.getFecha().equals(fecha) && turno.getHorario().equals(hora)) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+        return false;
+    }
 
-    public class Turnos {
+    public static class Turnos {
 
-        Pacientes paciente;
+        paciente.Pacientes paciente;
         private String horario;
         private String fecha;
-        ;
 
-        public Turnos(String horario, String fecha, Pacientes paciente) {
-
+        public Turnos(String horario, String fecha, paciente.Pacientes paciente) {
             this.horario = horario;
             this.fecha = fecha;
             this.paciente = paciente;
@@ -46,12 +55,9 @@ public class turno {
             this.fecha = fecha;
         }
 
-       
-
-       
-
-       
-
-      
+        @Override
+        public String toString() {
+            return "Turnos{" + "paciente=" + paciente + ", horario=" + horario + ", fecha=" + fecha + '}';
+        }   
     }
 }

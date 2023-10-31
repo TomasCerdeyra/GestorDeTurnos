@@ -230,16 +230,15 @@ public class FormularioPaciente extends javax.swing.JFrame {
             volvermenu2.setVisible(true);
             volvermenu2.setLocationRelativeTo(null);
             this.setVisible(false);
-        
 
-        paciente.Pacientes nuevoPaciente = new paciente.Pacientes(txtNombrePas.getText(), txtApellidopas.getText(),
-                txtTelefonoPas.getText(), txtDniPass.getText(), cmbObraSocialPass.getSelectedItem().toString(), txtEdadPass.getText(), cbxSexoPas.getSelectedItem().toString());
+            paciente.Pacientes nuevoPaciente = new paciente.Pacientes(txtNombrePas.getText(), txtApellidopas.getText(),
+                    txtTelefonoPas.getText(), txtDniPass.getText(), cmbObraSocialPass.getSelectedItem().toString(), txtEdadPass.getText(), cbxSexoPas.getSelectedItem().toString());
 
-        paciente.listaPacientes.add(nuevoPaciente);
+            paciente.listaPacientes.add(nuevoPaciente);
 
-        for (paciente.Pacientes p : paciente.listaPacientes) {
-            System.out.println(p.toString());
-        }
+            //for (paciente.Pacientes p : paciente.listaPacientes) {
+            //    System.out.println(p.toString());
+            //}
         }
     }//GEN-LAST:event_btnGuardarTurnoActionPerformed
 

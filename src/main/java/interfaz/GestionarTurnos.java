@@ -6,6 +6,7 @@ package interfaz;
 
 import javax.swing.table.DefaultTableModel;
 import logica.paciente;
+import logica.turno;
 
 /**
  *
@@ -13,22 +14,31 @@ import logica.paciente;
  */
 public class GestionarTurnos extends javax.swing.JFrame {
     DefaultTableModel model = new DefaultTableModel();
-
+    
 
     public GestionarTurnos() {
         initComponents();
         
-        model.addColumn("Dni");
-        model.addColumn("Dia");
-        model.addColumn("Mes");
-        model.addColumn("Año");
+        model.addColumn("Fecha");
         model.addColumn("Hora");
-
-        RegistrarTurnos();
+        model.addColumn("Nombre");
+        model.addColumn("DNI");
+        
+        RegistrarTabla();
     }
-    private void RegistrarTurnos(){
-
+    
+    private void RegistrarTabla() {
+        for (turno.Turnos p : turno.listaTurnos) {
+            Object a[] = new Object[4];
+            a[0] = p.getFecha();
+            a[1] = p.getHorario();
+            a[2] = p.getPaciente().getNombre();
+            a[3] = p.getPaciente().getDni();
+            model.addRow(a);
+        }
+        tblLIstaTurnos.setModel(model);
     }
+
 
 
     @SuppressWarnings("unchecked")
@@ -38,7 +48,7 @@ public class GestionarTurnos extends javax.swing.JFrame {
         jSpinner1 = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblLIstaTurnos = new javax.swing.JTable();
         jScrollBar1 = new javax.swing.JScrollBar();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -49,7 +59,7 @@ public class GestionarTurnos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblLIstaTurnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -60,7 +70,7 @@ public class GestionarTurnos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblLIstaTurnos);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -187,6 +197,6 @@ public class GestionarTurnos extends javax.swing.JFrame {
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblLIstaTurnos;
     // End of variables declaration//GEN-END:variables
 }
