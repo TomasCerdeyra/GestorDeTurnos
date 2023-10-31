@@ -4,6 +4,7 @@
  */
 package interfaz;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import logica.paciente;
 import static logica.turno.listaTurnos;
@@ -184,10 +185,14 @@ public class FormularioTurnos extends javax.swing.JFrame {
                 break;
             }
         }*/
+  SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+  String theDate = dateFormat.format(jDateChooser1.getDate());
+  System.out.println(theDate);
+        
     }//GEN-LAST:event_GuardarTurnoActionPerformed
 
     private void HoraTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraTurnoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_HoraTurnoActionPerformed
 
 

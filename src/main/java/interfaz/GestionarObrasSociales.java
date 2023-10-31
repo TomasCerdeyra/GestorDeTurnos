@@ -28,10 +28,13 @@ public class GestionarObrasSociales extends javax.swing.JFrame {
     private void RegistrarTablaObrasSociales() {//registrar pacientes y obras sociales en la lista
         for (paciente.Pacientes p : paciente.listaPacientes) {
             Object a[] = new Object[3];
-            a[0] = p.getDni();
-            a[1] = p.getObraSocial();
-            a[2] = p.getTelefono();
-            model.addRow(a);
+            if (!p.getObraSocial().equals("Ninguna")) {
+             a[0] = p.getDni();
+             a[1] = p.getObraSocial(); 
+             a[2] = p.getTelefono();
+             model.addRow(a);
+            }
+           
         }
         tblObrasSociales.setModel(model);
 

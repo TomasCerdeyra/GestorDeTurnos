@@ -12,19 +12,13 @@ public class turno {
 
         Pacientes paciente;
         private String horario;
-        private String dia;
-        private String anio;
+        private String fecha;
+        ;
 
-        private String mes;
-        private String dni;
-
-        public Turnos(String horario, String dia, String mes, String anio, Pacientes paciente) {
+        public Turnos(String horario, String fecha, Pacientes paciente) {
 
             this.horario = horario;
-            this.dia = dia;
-            this.mes = mes;
-            this.anio = anio;
-            this.dni = paciente.getDni();
+            this.fecha = fecha;
             this.paciente = paciente;
         }
 
@@ -36,36 +30,28 @@ public class turno {
             this.horario = horario;
         }
 
-        public String getDia() {
-            return dia;
+        public Pacientes getPaciente() {
+            return paciente;
         }
 
-        public void setDia(String dia) {
-            this.dia = dia;
+        public void setPaciente(Pacientes paciente) {
+            this.paciente = paciente;
         }
 
-        public String getMes() {
-            return mes;
+        public String getFecha() {
+            return fecha;
         }
 
-        public void setMes(String mes) {
-            this.mes = mes;
+        public void setFecha(String fecha) {
+            this.fecha = fecha;
         }
 
-        public String getAnio() {
-            return anio;
-        }
+       
 
-        public void setAnio(String anio) {
-            this.anio = anio;
-        }
+       
 
-        public String getDni() {
-            return paciente.getDni();
-        }
+       
 
-        public void setDni(Pacientes paciente) {
-            this.dni = paciente.getDni();
-        }
+      
     }
 }
