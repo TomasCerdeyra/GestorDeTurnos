@@ -53,7 +53,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
         ModificarPaciente = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnEliminarPaciente = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         tblListPacientes = new javax.swing.JTable();
         jScrollBar1 = new javax.swing.JScrollBar();
@@ -103,6 +103,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
         jScrollPane4.setViewportView(jTable3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         ModificarPaciente.setBackground(new java.awt.Color(0, 153, 204));
         ModificarPaciente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -114,10 +115,15 @@ public class GestionarPacientes extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 204));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("ELIMINAR PACIENTE");
+        btnEliminarPaciente.setBackground(new java.awt.Color(0, 153, 204));
+        btnEliminarPaciente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEliminarPaciente.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarPaciente.setText("ELIMINAR PACIENTE");
+        btnEliminarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarPacienteActionPerformed(evt);
+            }
+        });
 
         tblListPacientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -154,7 +160,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
                 .addGap(69, 69, 69)
                 .addComponent(ModificarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEliminarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -168,7 +174,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ModificarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEliminarPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -307,6 +313,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
         x.txtTelefonoPas.setText(registro.elementAt(6).toString());
 
         x.setVisible(true);
+        x.setLocationRelativeTo(null);
         this.setVisible(false);
         if (x.getRootPane() != null) {
 
@@ -331,10 +338,31 @@ public class GestionarPacientes extends javax.swing.JFrame {
 
     }//GEN-LAST:event_tblListPacientesMouseClicked
 
+    private void btnEliminarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPacienteActionPerformed
+        if (tblListPacientes.getSelectedRow() == -1) {
+            return;
+        }
+
+        Vector registro;
+
+        registro = (Vector) model.getDataVector().elementAt(tblListPacientes.getSelectedRow());
+        String DNI = registro.elementAt(2).toString();
+
+        paciente.listaPacientes.remove(paciente.buscarPorDni(DNI));
+
+        GestionarPacientes volvermenu2 = new GestionarPacientes();
+        volvermenu2.setVisible(true);
+        volvermenu2.setLocationRelativeTo(null);
+        this.setVisible(false);
+
+
+    
+    }//GEN-LAST:event_btnEliminarPacienteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ModificarPaciente;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnEliminarPaciente;
     private javax.swing.JButton jButton3;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;

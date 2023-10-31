@@ -28,7 +28,6 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         cbxSexoPas5 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
-        btnVolverMenuForm = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtDniPass = new javax.swing.JTextField();
         txtEdadPass = new javax.swing.JTextField();
@@ -81,13 +80,6 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.setForeground(new java.awt.Color(0, 153, 204));
 
-        btnVolverMenuForm.setText("volver");
-        btnVolverMenuForm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverMenuFormActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Agregar Paciente");
@@ -97,19 +89,13 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVolverMenuForm)
-                .addGap(159, 159, 159)
+                .addGap(237, 237, 237)
                 .addComponent(jLabel1)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVolverMenuForm)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         txtEdadPass.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +150,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(btnGuardarTurno)))
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +186,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(txtTelefonoPas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(btnGuardarTurno)
                 .addGap(37, 37, 37))
         );
@@ -243,13 +229,6 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxSexoPas5ActionPerformed
 
-    private void btnVolverMenuFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuFormActionPerformed
-        Pacientes volverMenuForm = new Pacientes();
-        volverMenuForm.setVisible(true);
-        volverMenuForm.setLocationRelativeTo(null);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnVolverMenuFormActionPerformed
-
     private void txtEdadPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdadPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEdadPassActionPerformed
@@ -257,7 +236,6 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarTurno;
-    private javax.swing.JButton btnVolverMenuForm;
     public javax.swing.JComboBox<String> cbxSexoPas5;
     public javax.swing.JComboBox<String> cmbObraSocialPass;
     private javax.swing.JLabel jLabel1;

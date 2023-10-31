@@ -4,12 +4,12 @@ import javax.swing.JOptionPane;
 import logica.obraSocial;
 import persistencia.user;
 
-public class Login extends javax.swing.JFrame {
+public class login extends javax.swing.JFrame {
 
     user user;
     obraSocial controlador = new obraSocial();
 
-    public Login() {
+    public login() {
         initComponents();
         user = new user();
     }

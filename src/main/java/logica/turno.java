@@ -1,4 +1,5 @@
 package logica;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -7,16 +8,23 @@ import logica.paciente.Pacientes;
 public class turno {
 
     public static List<Turnos> listaTurnos = new ArrayList<>();
-    
-     public static boolean buscarPorFecha(String fecha, String hora) {
+
+    public static boolean buscarPorFecha(String fecha, String hora) {
         for (Turnos turno : listaTurnos) {
             if (turno.getFecha().equals(fecha) && turno.getHorario().equals(hora)) {
                 return true;
-            }else{
-                return false;
             }
         }
         return false;
+    }
+
+    public static Turnos buscarPorFechayHora(String fecha, String hora) {
+        for (Turnos turno : listaTurnos) {
+            if (turno.getFecha().equals(fecha) && turno.getHorario().equals(hora)) {
+                return turno;
+            }
+        }
+        return null; // Retorna null si no se encuentra ningún paciente con el DNI dado
     }
 
     public static class Turnos {
@@ -58,6 +66,6 @@ public class turno {
         @Override
         public String toString() {
             return "Turnos{" + "paciente=" + paciente + ", horario=" + horario + ", fecha=" + fecha + '}';
-        }   
+        }
     }
 }
