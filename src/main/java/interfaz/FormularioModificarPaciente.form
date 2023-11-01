@@ -46,7 +46,7 @@
                       </Group>
                       <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="cbxSexoPas5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cbxSexoPas" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtNombrePas" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtDniPass" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtEdadPass" alignment="0" max="32767" attributes="0"/>
@@ -93,7 +93,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbxSexoPas5" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="cbxSexoPas" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -170,7 +170,7 @@
         <Property name="text" type="java.lang.String" value="Obra Social del paciente:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cbxSexoPas5">
+    <Component class="javax.swing.JComboBox" name="cbxSexoPas">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="0"/>
@@ -184,7 +184,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxSexoPas5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxSexoPasActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

@@ -8,12 +8,9 @@ public class FormularioPaciente extends javax.swing.JFrame {
 
     public FormularioPaciente() {
         initComponents();
-
         for (obraSocial.ObraSocial obra : obraSocial.listaObraSocial) {
             cmbObraSocialPass.addItem(obra.getNombre());
-
         }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -222,23 +219,37 @@ public class FormularioPaciente extends javax.swing.JFrame {
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
 
-        if (txtNombrePas.getText().isEmpty() || txtApellidopas.getText().isEmpty() || txtTelefonoPas.getText().isEmpty() || txtDniPass.getText().isEmpty() || txtEdadPass.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this,
-                    "Asegúrese de completar todos los datos del paciente.");
+        String nombre = txtNombrePas.getText();
+        String apellido = txtApellidopas.getText();
+        String telefono = txtTelefonoPas.getText();
+        String dni = txtDniPass.getText();
+        String edad = txtEdadPass.getText();
+        String obraSocial = cmbObraSocialPass.getSelectedItem().toString();
+        String sexo = cbxSexoPas.getSelectedItem().toString();
+        
+        paciente.Pacientes verificarPaciente = paciente.buscarPorDni(dni);
+
+        if (txtNombrePas.getText().isEmpty() || txtApellidopas.getText().isEmpty() || txtTelefonoPas.getText().isEmpty() || txtDniPass.getText().isEmpty() || txtEdadPass.getText().isEmpty() || obraSocial.equals("Seleccionar") || sexo.equals("Seleccionar")) {
+            JOptionPane.showMessageDialog(this, "Asegúrese de completar todos los datos del paciente.");
+        } else if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")) {
+            JOptionPane.showMessageDialog(this, "El nombre solo puede contener letras.");
+        } else if (!apellido.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")) {
+            JOptionPane.showMessageDialog(this, "El apellido solo puede contener letras.");
+        } else if (!telefono.matches("\\d{10}")) {
+            JOptionPane.showMessageDialog(this, "Número de teléfono inválido. Debe contener 10 dígitos.");
+        } else if (!dni.matches("\\d{8}")) {
+            JOptionPane.showMessageDialog(this, "Número de DNI inválido. Debe contener 8 dígitos.");
+        } else if (verificarPaciente !=  null) {
+            JOptionPane.showMessageDialog(this, "El paciente ya existe");
         } else {
+            paciente.Pacientes nuevoPaciente = new paciente.Pacientes(nombre, apellido, telefono, dni, obraSocial, edad, sexo);
+
+            paciente.listaPacientes.add(nuevoPaciente);
+
             Pacientes volvermenu2 = new Pacientes();
             volvermenu2.setVisible(true);
             volvermenu2.setLocationRelativeTo(null);
             this.setVisible(false);
-
-            paciente.Pacientes nuevoPaciente = new paciente.Pacientes(txtNombrePas.getText(), txtApellidopas.getText(),
-                    txtTelefonoPas.getText(), txtDniPass.getText(), cmbObraSocialPass.getSelectedItem().toString(), txtEdadPass.getText(), cbxSexoPas.getSelectedItem().toString());
-
-            paciente.listaPacientes.add(nuevoPaciente);
-
-            //for (paciente.Pacientes p : paciente.listaPacientes) {
-            //    System.out.println(p.toString());
-            //}
         }
     }//GEN-LAST:event_btnGuardarTurnoActionPerformed
 

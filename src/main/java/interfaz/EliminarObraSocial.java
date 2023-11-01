@@ -1,7 +1,4 @@
-
 package interfaz;
-
-
 import logica.obraSocial;
 import logica.obraSocial.ObraSocial;
 import static logica.obraSocial.listaObraSocial;

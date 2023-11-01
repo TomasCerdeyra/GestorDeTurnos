@@ -1,22 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
-
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import logica.paciente;
 
-/**
- *
- * @author Matias Lopez
- */
 public class GestionarObrasSociales extends javax.swing.JFrame {
 
     DefaultTableModel model = new DefaultTableModel();
 
-    public GestionarObrasSociales() {//columnas tabla de obras sociales
+    public GestionarObrasSociales() {
+        //columnas tabla de obras sociales
         initComponents();
         model.addColumn("Dni");
         model.addColumn("Obra Social");
@@ -25,7 +16,8 @@ public class GestionarObrasSociales extends javax.swing.JFrame {
         RegistrarTablaObrasSociales();
     }
 
-    private void RegistrarTablaObrasSociales() {//registrar pacientes y obras sociales en la lista
+    private void RegistrarTablaObrasSociales() {
+        //registrar pacientes y obras sociales en la lista
         for (paciente.Pacientes p : paciente.listaPacientes) {
             Object a[] = new Object[3];
             if (!p.getObraSocial().equals("Ninguna")) {
@@ -34,10 +26,8 @@ public class GestionarObrasSociales extends javax.swing.JFrame {
              a[2] = p.getTelefono();
              model.addRow(a);
             }
-           
         }
         tblObrasSociales.setModel(model);
-
     }
 
     @SuppressWarnings("unchecked")
@@ -154,12 +144,11 @@ public class GestionarObrasSociales extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverMenuFormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuFormActionPerformed
-        ObrasSociales volverMenuForm = new ObrasSociales();
-        volverMenuForm.setVisible(true);
-        volverMenuForm.setLocationRelativeTo(null);
+        ObrasSociales volverMenu = new ObrasSociales();
+        volverMenu.setVisible(true);
+        volverMenu.setLocationRelativeTo(null);
         this.setVisible(false);
     }//GEN-LAST:event_btnVolverMenuFormActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolverMenuForm;

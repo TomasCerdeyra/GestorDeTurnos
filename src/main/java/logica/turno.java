@@ -1,8 +1,6 @@
 package logica;
-
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 import logica.paciente.Pacientes;
 
 public class turno {
@@ -24,7 +22,7 @@ public class turno {
                 return turno;
             }
         }
-        return null; // Retorna null si no se encuentra ningún paciente con el DNI dado
+        return null;
     }
 
     public static class Turnos {

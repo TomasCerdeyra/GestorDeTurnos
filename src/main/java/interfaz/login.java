@@ -4,12 +4,12 @@ import javax.swing.JOptionPane;
 import logica.obraSocial;
 import persistencia.user;
 
-public class login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     user user;
     obraSocial controlador = new obraSocial();
 
-    public login() {
+    public Login() {
         initComponents();
         user = new user();
     }
@@ -197,13 +197,13 @@ public class login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,
                             "Error: Usuario o Contraseña incorrectos.",
                             " Error ",
-                            JOptionPane.ERROR_MESSAGE // MENSAJE DE ERROR CONTRASENIA INCORRECTA
+                            JOptionPane.ERROR_MESSAGE 
                     );
                 }
             }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
-//.-.-..--.-.-.-.-.-..-----------------
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;

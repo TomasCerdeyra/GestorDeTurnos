@@ -79,8 +79,8 @@
                           <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnEliminarOS" pref="384" max="32767" attributes="0"/>
-                              <Component id="btnAddOS1" max="32767" attributes="0"/>
-                              <Component id="btnGestOS" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnAgregarOS" max="32767" attributes="0"/>
+                              <Component id="btnListaOS" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -107,7 +107,7 @@
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnAddOS1" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnAgregarOS" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -115,7 +115,7 @@
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnGestOS" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnListaOS" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace pref="89" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -136,7 +136,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
@@ -151,7 +151,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" pref="44" max="-2" attributes="0"/>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
@@ -171,7 +171,7 @@
                 <Property name="text" type="java.lang.String" value="Obras Sociales"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnVolver">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -182,12 +182,12 @@
                 <Property name="text" type="java.lang.String" value="volver"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnGestOS">
+        <Component class="javax.swing.JButton" name="btnListaOS">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="99" red="0" type="rgb"/>
@@ -201,10 +201,10 @@
             <Property name="text" type="java.lang.String" value="LISTA OBRAS SOCIALES"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGestOSActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListaOSActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAddOS1">
+        <Component class="javax.swing.JButton" name="btnAgregarOS">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="99" red="0" type="rgb"/>
@@ -218,7 +218,7 @@
             <Property name="text" type="java.lang.String" value="AGREGAR OBRA SOCIAL"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddOS1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarOSActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnEliminarOS">

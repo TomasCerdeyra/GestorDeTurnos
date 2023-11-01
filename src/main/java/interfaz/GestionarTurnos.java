@@ -1,22 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
-
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
-import logica.paciente;
 import logica.turno;
 
-/**
- *
- * @author leszk
- */
 public class GestionarTurnos extends javax.swing.JFrame {
     DefaultTableModel model = new DefaultTableModel();
     
-
     public GestionarTurnos() {
         initComponents();
         
@@ -40,8 +29,6 @@ public class GestionarTurnos extends javax.swing.JFrame {
         tblLIstaTurnos.setModel(model);
     }
 
-
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -54,7 +41,7 @@ public class GestionarTurnos extends javax.swing.JFrame {
         btnEliminarTurno = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -89,12 +76,12 @@ public class GestionarTurnos extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Gestionar Turnos");
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("volver");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setBackground(new java.awt.Color(255, 255, 255));
+        btnVolver.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolver.setText("volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
 
@@ -104,7 +91,7 @@ public class GestionarTurnos extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
+                .addComponent(btnVolver)
                 .addGap(148, 148, 148)
                 .addComponent(jLabel1)
                 .addContainerGap(241, Short.MAX_VALUE))
@@ -118,7 +105,7 @@ public class GestionarTurnos extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton3)))
+                        .addComponent(btnVolver)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -165,12 +152,12 @@ public class GestionarTurnos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Turnos form = new Turnos();
-        form.setVisible(true);
-        form.setLocationRelativeTo(null);
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        Turnos volverMenu = new Turnos();
+        volverMenu.setVisible(true);
+        volverMenu.setLocationRelativeTo(null);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnEliminarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTurnoActionPerformed
         if (tblLIstaTurnos.getSelectedRow() == -1) {
@@ -185,22 +172,18 @@ public class GestionarTurnos extends javax.swing.JFrame {
 
         boolean dato = turno.buscarPorFecha(fecha,hora);
         if (dato) {
-            turno.listaTurnos.remove(turno.buscarPorFechayHora(fecha, hora));
-            
+            turno.listaTurnos.remove(turno.buscarPorFechayHora(fecha, hora));   
         }
 
-        GestionarTurnos volvermenu2 = new GestionarTurnos();
-        volvermenu2.setVisible(true);
-        volvermenu2.setLocationRelativeTo(null);
+        GestionarTurnos volverMenu = new GestionarTurnos();
+        volverMenu.setVisible(true);
+        volverMenu.setLocationRelativeTo(null);
         this.setVisible(false);
-    
     }//GEN-LAST:event_btnEliminarTurnoActionPerformed
-
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminarTurno;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

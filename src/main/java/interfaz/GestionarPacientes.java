@@ -1,7 +1,5 @@
 package interfaz;
-
 import java.util.Vector;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.paciente;
 
@@ -18,9 +16,8 @@ public class GestionarPacientes extends javax.swing.JFrame {
         model.addColumn("Obra Social");
         model.addColumn("Sexo");
         model.addColumn("Tel");
-            
-        RegistrarTabla();
 
+        RegistrarTabla();
     }
 
     private void RegistrarTabla() {
@@ -266,49 +263,50 @@ public class GestionarPacientes extends javax.swing.JFrame {
 
     private void ModificarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarPacienteActionPerformed
 
-        if (tblListPacientes.getSelectedRow() == -1) 
+        if (tblListPacientes.getSelectedRow() == -1) {
             return;
+        }
 
         FormularioModificarPaciente x = new FormularioModificarPaciente();
 
         Vector registro;
-
         registro = (Vector) model.getDataVector().elementAt(tblListPacientes.getSelectedRow());
+        
         //-------------------------------------Busqueda de Selector ComboBox--------------------------------------------------------
         // Obtengo el ell sexo seleccionado en la tabla
         String sexoSeleccionado = registro.elementAt(5).toString().trim();
 
-        // Agarro el indice que es igual al sexoSleccionado
+        // Agarro el indice que es igual al sexo Seleccionado
         int indexSexo = -1;
-        for (int i = 0; i < x.cbxSexoPas5.getItemCount(); i++) {
-            if (x.cbxSexoPas5.getItemAt(i).equals(sexoSeleccionado)) {
+        for (int i = 0; i < x.cbxSexoPas.getItemCount(); i++) {
+            if (x.cbxSexoPas.getItemAt(i).equals(sexoSeleccionado)) {
                 indexSexo = i;
                 break;
             }
         }
 
         // Obtengo La obra Social seleccionado en la tabla
-        String obraSocialSeleccionado = registro.elementAt(4).toString().trim();
-        
-        
+        String obraSocialSeleccionada = registro.elementAt(4).toString().trim();
+
         // Agarro el indice que es igual al sexoSleccionado
         int indexObraSocial = -1;
         for (int i = 0; i < x.cmbObraSocialPass.getItemCount(); i++) {
-            if (x.cmbObraSocialPass.getItemAt(i).trim().equals(obraSocialSeleccionado)) {
+            if (x.cmbObraSocialPass.getItemAt(i).trim().equals(obraSocialSeleccionada)) {
                 indexObraSocial = i;
                 break;
             }
         }
         //-------------------------------------Fin Busqueda de Selector ComboBox--------------------------------------------------------
-        //Elimino el paciente viejo
+        //Paciente viejo
         String DNI = registro.elementAt(2).toString();
         paciente.listaPacientes.remove(paciente.buscarPorDni(DNI));
-        
+
+        //Copio los campos del paciente viejo en el formulario de modificar paciente
         x.txtNombrePas.setText(registro.elementAt(0).toString());
         x.txtApellidopas.setText(registro.elementAt(1).toString());
         x.txtDniPass.setText(registro.elementAt(2).toString());
         x.txtEdadPass.setText(registro.elementAt(3).toString());
-        x.cbxSexoPas5.setSelectedIndex(indexSexo); // Para asegurarte de que es un String
+        x.cbxSexoPas.setSelectedIndex(indexSexo); // Para asegurarte de que es un String
         x.cmbObraSocialPass.setSelectedIndex(indexObraSocial);
         x.txtTelefonoPas.setText(registro.elementAt(6).toString());
 
@@ -322,7 +320,7 @@ public class GestionarPacientes extends javax.swing.JFrame {
             v.addElement(x.txtApellidopas.getText());
             v.addElement(x.txtDniPass.getText());
             v.addElement(x.txtEdadPass.getText());
-            v.addElement(x.cbxSexoPas5.getSelectedItem().toString());
+            v.addElement(x.cbxSexoPas.getSelectedItem().toString());
             v.addElement(x.cmbObraSocialPass.getSelectedItem().toString());
             v.addElement(x.txtTelefonoPas.getText());
 
@@ -350,13 +348,10 @@ public class GestionarPacientes extends javax.swing.JFrame {
 
         paciente.listaPacientes.remove(paciente.buscarPorDni(DNI));
 
-        GestionarPacientes volvermenu2 = new GestionarPacientes();
-        volvermenu2.setVisible(true);
-        volvermenu2.setLocationRelativeTo(null);
+        GestionarPacientes volverMenu = new GestionarPacientes();
+        volverMenu.setVisible(true);
+        volverMenu.setLocationRelativeTo(null);
         this.setVisible(false);
-
-
-    
     }//GEN-LAST:event_btnEliminarPacienteActionPerformed
 
 

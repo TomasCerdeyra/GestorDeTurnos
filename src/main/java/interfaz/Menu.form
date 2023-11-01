@@ -45,9 +45,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnAgregarTurno" alignment="0" pref="386" max="32767" attributes="0"/>
-                              <Component id="btnVerLista" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnVerLista1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnMenuPacientes" alignment="0" pref="386" max="32767" attributes="0"/>
+                              <Component id="btnMenuTurnos" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnMenuObras" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -74,22 +74,22 @@
                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnAgregarTurno" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnMenuPacientes" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnVerLista" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnMenuTurnos" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace pref="34" max="32767" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnVerLista1" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnMenuObras" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnAgregarTurno">
+        <Component class="javax.swing.JButton" name="btnMenuPacientes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="99" red="0" type="rgb"/>
@@ -103,10 +103,10 @@
             <Property name="text" type="java.lang.String" value="PACIENTES"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarTurnoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenuPacientesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVerLista">
+        <Component class="javax.swing.JButton" name="btnMenuTurnos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="99" red="0" type="rgb"/>
@@ -120,7 +120,7 @@
             <Property name="text" type="java.lang.String" value="TURNOS"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerListaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenuTurnosActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -195,7 +195,7 @@
             <Property name="text" type="java.lang.String" value="Agrega, Modifica, Elimina y Visualiza la lista de turnos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVerLista1">
+        <Component class="javax.swing.JButton" name="btnMenuObras">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="99" red="0" type="rgb"/>
@@ -209,7 +209,7 @@
             <Property name="text" type="java.lang.String" value="OBRAS SOCIALES"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerLista1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMenuObrasActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">

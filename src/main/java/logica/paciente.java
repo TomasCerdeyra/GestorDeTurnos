@@ -14,7 +14,7 @@ public class paciente {
                 return paciente;
             }
         }
-        return null; // Retorna null si no se encuentra ningún paciente con el DNI dado
+        return null;
     }
 
     public static class Pacientes {
@@ -26,7 +26,6 @@ public class paciente {
         private String ObraSocial;
         private String sexo;
         private String edad;
-        private List<Turnos> turnosPaciente;
 
         public Pacientes(String nombre, String Apellido, String telefono, String dni, String obraSocial, String edad, String sexo) {
             this.nombre = nombre;
@@ -36,14 +35,6 @@ public class paciente {
             this.ObraSocial = obraSocial;
             this.sexo = sexo;
             this.edad = edad;
-        }
-
-        public List<Turnos> getTurnosPaciente() {
-            return turnosPaciente;
-        }
-
-        public void setTurnosPaciente(Turnos turnosPaciente) {
-            this.turnosPaciente.add(turnosPaciente);
         }
 
         public String getNombre() {

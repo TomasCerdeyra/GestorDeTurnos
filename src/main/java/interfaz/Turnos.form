@@ -43,7 +43,7 @@
                   <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="btnAgregarTurno1" max="32767" attributes="0"/>
-                      <Component id="btnAgregarTurno" pref="421" max="32767" attributes="0"/>
+                      <Component id="btnGestionarTurnos" pref="421" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
               </Group>
@@ -74,14 +74,14 @@
                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnAgregarTurno" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="btnGestionarTurnos" min="-2" pref="54" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnAgregarTurno">
+        <Component class="javax.swing.JButton" name="btnGestionarTurnos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="99" red="0" type="rgb"/>
@@ -95,7 +95,7 @@
             <Property name="text" type="java.lang.String" value="GESTIONAR TURNO"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarTurnoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGestionarTurnosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnAgregarTurno1">

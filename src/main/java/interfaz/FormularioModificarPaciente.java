@@ -11,9 +11,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
 
         for (obraSocial.ObraSocial obra : obraSocial.listaObraSocial) {
             cmbObraSocialPass.addItem(obra.getNombre());
-
         }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -26,7 +24,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
         cmbObraSocialPass = new javax.swing.JComboBox<>();
         btnGuardarTurno = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        cbxSexoPas5 = new javax.swing.JComboBox<>();
+        cbxSexoPas = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtDniPass = new javax.swing.JTextField();
@@ -69,11 +67,11 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
 
         jLabel4.setText("Obra Social del paciente:");
 
-        cbxSexoPas5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cbxSexoPas5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Masculino", "Femenino" }));
-        cbxSexoPas5.addActionListener(new java.awt.event.ActionListener() {
+        cbxSexoPas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbxSexoPas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Masculino", "Femenino" }));
+        cbxSexoPas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxSexoPas5ActionPerformed(evt);
+                cbxSexoPasActionPerformed(evt);
             }
         });
 
@@ -140,7 +138,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cbxSexoPas5, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbxSexoPas, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtNombrePas, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDniPass, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEdadPass, javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,7 +175,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(cbxSexoPas5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxSexoPas, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cmbObraSocialPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,31 +201,44 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbObraSocialPassActionPerformed
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
-        if (txtNombrePas.getText().isEmpty() || txtApellidopas.getText().isEmpty() || txtTelefonoPas.getText().isEmpty() || txtDniPass.getText().isEmpty() || txtEdadPass.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this,
-                    "Asegúrese de completar todos los datos del paciente.");
+         String nombre = txtNombrePas.getText();
+        String apellido = txtApellidopas.getText();
+        String telefono = txtTelefonoPas.getText();
+        String dni = txtDniPass.getText();
+        String edad = txtEdadPass.getText();
+        String obraSocial = cmbObraSocialPass.getSelectedItem().toString();
+        String sexo = cbxSexoPas.getSelectedItem().toString();
+        
+        paciente.Pacientes verificarPaciente = paciente.buscarPorDni(dni);
+
+        if (txtNombrePas.getText().isEmpty() || txtApellidopas.getText().isEmpty() || txtTelefonoPas.getText().isEmpty() || txtDniPass.getText().isEmpty() || txtEdadPass.getText().isEmpty() || obraSocial.equals("Seleccionar") || sexo.equals("Seleccionar")) {
+            JOptionPane.showMessageDialog(this, "Asegúrese de completar todos los datos del paciente.");
+        } else if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")) {
+            JOptionPane.showMessageDialog(this, "El nombre solo puede contener letras.");
+        } else if (!apellido.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")) {
+            JOptionPane.showMessageDialog(this, "El apellido solo puede contener letras.");
+        } else if (!telefono.matches("\\d{10}")) {
+            JOptionPane.showMessageDialog(this, "Número de teléfono inválido. Debe contener 10 dígitos.");
+        } else if (!dni.matches("\\d{8}")) {
+            JOptionPane.showMessageDialog(this, "Número de DNI inválido. Debe contener 8 dígitos.");
+        } else if (verificarPaciente !=  null) {
+            JOptionPane.showMessageDialog(this, "El paciente ya existe");
         } else {
-        paciente.Pacientes nuevoPaciente = new paciente.Pacientes(txtNombrePas.getText(), txtApellidopas.getText(),
-                txtTelefonoPas.getText(), txtDniPass.getText(), cmbObraSocialPass.getSelectedItem().toString(), txtEdadPass.getText(), cbxSexoPas5.getSelectedItem().toString());
+            paciente.Pacientes nuevoPaciente = new paciente.Pacientes(nombre, apellido, telefono, dni, obraSocial, edad, sexo);
 
-        paciente.listaPacientes.add(nuevoPaciente);
+            paciente.listaPacientes.add(nuevoPaciente);
 
-        // Después de agregar el paciente, muestro la pantalla
-        GestionarPacientes volvermenu2 = new GestionarPacientes();
-        volvermenu2.setVisible(true);
-        volvermenu2.setLocationRelativeTo(null);
-        this.setVisible(false);
-
-        for (paciente.Pacientes p : paciente.listaPacientes) {
-            System.out.println(p.toString());
-        }
+            GestionarPacientes volvermenu = new GestionarPacientes();
+            volvermenu.setVisible(true);
+            volvermenu.setLocationRelativeTo(null);
+            this.setVisible(false);
         }
 
     }//GEN-LAST:event_btnGuardarTurnoActionPerformed
 
-    private void cbxSexoPas5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSexoPas5ActionPerformed
+    private void cbxSexoPasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxSexoPasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxSexoPas5ActionPerformed
+    }//GEN-LAST:event_cbxSexoPasActionPerformed
 
     private void txtEdadPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdadPassActionPerformed
         // TODO add your handling code here:
@@ -236,7 +247,7 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardarTurno;
-    public javax.swing.JComboBox<String> cbxSexoPas5;
+    public javax.swing.JComboBox<String> cbxSexoPas;
     public javax.swing.JComboBox<String> cmbObraSocialPass;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
