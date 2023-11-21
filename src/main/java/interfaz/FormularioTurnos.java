@@ -167,7 +167,8 @@ public class FormularioTurnos extends javax.swing.JFrame {
 
         if (pacienteBuscado == null) {
             JOptionPane.showMessageDialog(this, "El paciente con el dni buscado no existe");
-        } else if (mensaje == true) {
+        }  
+        else if (mensaje == true) {
             JOptionPane.showMessageDialog(this, "Error: Turno ocupado");
         } else {
             turno.Turnos nuevoTurno = new turno.Turnos(hora, fecha, pacienteBuscado);

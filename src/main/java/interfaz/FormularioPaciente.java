@@ -237,6 +237,8 @@ public class FormularioPaciente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "El apellido solo puede contener letras.");
         } else if (!telefono.matches("\\d{10}")) {
             JOptionPane.showMessageDialog(this, "Número de teléfono inválido. Debe contener 10 dígitos.");
+        } else if (Integer.parseInt(edad) > 120 || Integer.parseInt(edad) < 0 ) {
+            JOptionPane.showMessageDialog(this, "La edad tiene que ser entre 0 y 120");
         } else if (!dni.matches("\\d{8}")) {
             JOptionPane.showMessageDialog(this, "Número de DNI inválido. Debe contener 8 dígitos.");
         } else if (verificarPaciente !=  null) {

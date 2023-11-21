@@ -201,14 +201,14 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbObraSocialPassActionPerformed
 
     private void btnGuardarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarTurnoActionPerformed
-         String nombre = txtNombrePas.getText();
+        String nombre = txtNombrePas.getText();
         String apellido = txtApellidopas.getText();
         String telefono = txtTelefonoPas.getText();
         String dni = txtDniPass.getText();
         String edad = txtEdadPass.getText();
         String obraSocial = cmbObraSocialPass.getSelectedItem().toString();
         String sexo = cbxSexoPas.getSelectedItem().toString();
-        
+
         paciente.Pacientes verificarPaciente = paciente.buscarPorDni(dni);
 
         if (txtNombrePas.getText().isEmpty() || txtApellidopas.getText().isEmpty() || txtTelefonoPas.getText().isEmpty() || txtDniPass.getText().isEmpty() || txtEdadPass.getText().isEmpty() || obraSocial.equals("Seleccionar") || sexo.equals("Seleccionar")) {
@@ -221,7 +221,9 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Número de teléfono inválido. Debe contener 10 dígitos.");
         } else if (!dni.matches("\\d{8}")) {
             JOptionPane.showMessageDialog(this, "Número de DNI inválido. Debe contener 8 dígitos.");
-        } else if (verificarPaciente !=  null) {
+        } else if (Integer.parseInt(edad) > 120 || Integer.parseInt(edad) < 0) {
+            JOptionPane.showMessageDialog(this, "La edad tiene que ser ente 0 y 120");
+        } else if (verificarPaciente != null) {
             JOptionPane.showMessageDialog(this, "El paciente ya existe");
         } else {
             paciente.Pacientes nuevoPaciente = new paciente.Pacientes(nombre, apellido, telefono, dni, obraSocial, edad, sexo);
