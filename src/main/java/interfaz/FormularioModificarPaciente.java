@@ -225,7 +225,8 @@ public class FormularioModificarPaciente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "La edad tiene que ser ente 0 y 120");
         } else if (verificarPaciente != null) {
             JOptionPane.showMessageDialog(this, "El paciente ya existe");
-        } else {
+        } else  {
+            
             paciente.Pacientes nuevoPaciente = new paciente.Pacientes(nombre, apellido, telefono, dni, obraSocial, edad, sexo);
 
             paciente.listaPacientes.add(nuevoPaciente);

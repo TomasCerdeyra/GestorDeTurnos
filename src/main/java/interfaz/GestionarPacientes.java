@@ -1,5 +1,6 @@
 package interfaz;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import logica.paciente;
 
@@ -263,9 +264,6 @@ public class GestionarPacientes extends javax.swing.JFrame {
 
     private void ModificarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarPacienteActionPerformed
 
-        if (tblListPacientes.getSelectedRow() == -1) {
-            return;
-        }
 
         FormularioModificarPaciente x = new FormularioModificarPaciente();
 
